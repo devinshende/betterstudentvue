@@ -10,9 +10,9 @@ int limit(number, max) {
 
 const myGray = Color(0xaaaaaaa);
 const double assignmentHeight = 40;
-
 // Future data => parseJson('grades.json');
 // String gradesData = await readJson('grades.json');
+
 List classesList = [
   {
     'name': 'AP Chemistry',
@@ -74,6 +74,18 @@ List classesList = [
 ];
 
 class GradesPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: NewGradesPage(),
+    );
+  }
+}
+
+// const myGray = Color(0xaaaaaaa);
+// const double assignmentHeight = 40;
+
+class NewGradesPage extends StatelessWidget {
   Widget buildClassWidget(BuildContext context, int index) {
     if (index == 0) {
       return Center(
@@ -89,16 +101,12 @@ class GradesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Center(
-          child: ListView.builder(
-            shrinkWrap: true,
-            itemCount: classesList.length + 1,
-            itemBuilder: buildClassWidget,
-          ),
-        ),
-      ],
+    return Center(
+      child: ListView.builder(
+        shrinkWrap: true,
+        itemCount: classesList.length + 1,
+        itemBuilder: buildClassWidget,
+      ),
     );
   }
 }
@@ -165,7 +173,7 @@ class _ClassState extends State<Class> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    Widget assignmentsDialog = ClassesPopup(
+    Widget errorDialog = ClassesPopup(
       data: widget.classData,
       windowSize: size,
     );
@@ -180,7 +188,7 @@ class _ClassState extends State<Class> {
                 onDoubleTap: () {
                   showDialog(
                       context: context,
-                      builder: (BuildContext context) => assignmentsDialog);
+                      builder: (BuildContext context) => errorDialog);
                 },
                 child: Container(
                   width: size.width * 0.8,
