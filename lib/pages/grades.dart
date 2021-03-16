@@ -88,14 +88,17 @@ class GradesPage extends StatelessWidget {
 class NewGradesPage extends StatelessWidget {
   Widget buildClassWidget(BuildContext context, int index) {
     if (index == 0) {
-      return Center(
-        child: Text(
-          'Classes',
-          style: TextStyle(
-              fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
-        ),
-      );
+      return SizedBox();
     }
+    // if (index == 0) {
+    //   return Center(
+    //     child: Text(
+    //       'Classes',
+    //       style: TextStyle(
+    //           fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
+    //     ),
+    //   );
+    // }
     return Class(index, classesList[index - 1]);
   }
 

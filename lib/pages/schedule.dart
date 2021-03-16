@@ -16,13 +16,7 @@ const double assignmentHeight = 40;
 class NewGradesPage extends StatelessWidget {
   Widget buildClassWidget(BuildContext context, int index) {
     if (index == 0) {
-      return Center(
-        child: Text(
-          'Classes',
-          style: TextStyle(
-              fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black),
-        ),
-      );
+      return SizedBox();
     }
     return Class(index, classesList[index - 1]);
   }
@@ -54,50 +48,6 @@ class _ClassState extends State<Class> {
   Widget dropdown = SizedBox();
   Widget dropdownCover = SizedBox();
 
-  void toggleDropdown() {
-    if (isOpen) {
-      isOpen = false;
-      setState(() {
-        dropdown = SizedBox();
-        dropdownCover = SizedBox();
-      });
-    } else {
-      isOpen = true;
-      setState(() {
-        double mh =
-            assignmentHeight * limit(widget.classData['assignments'].length, 3);
-        dropdown = Container(
-          width: MediaQuery.of(context).size.width * 0.8,
-          // fit 3 assignments in the dropdown at a time
-          constraints: BoxConstraints(
-            maxHeight: mh,
-          ),
-          child: ListView.builder(
-            shrinkWrap: true,
-            itemCount: widget.classData['assignments'].length,
-            itemBuilder: (context, index) {
-              return Assignment(
-                widget.classData['assignments'][index],
-              );
-            },
-          ),
-        );
-        dropdownCover = Positioned(
-          top: 30,
-          child: Container(
-            constraints: BoxConstraints(maxHeight: mh + 25),
-            width: MediaQuery.of(context).size.width * 0.8,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.vertical(
-                  top: Radius.circular(0), bottom: Radius.circular(20)),
-              color: Colors.deepPurpleAccent[100],
-            ),
-          ),
-        );
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -112,7 +62,6 @@ class _ClassState extends State<Class> {
           Column(
             children: [
               GestureDetector(
-                onTap: toggleDropdown,
                 onDoubleTap: () {
                   showDialog(
                       context: context,
@@ -137,11 +86,7 @@ class _ClassState extends State<Class> {
                             fontWeight: FontWeight.w400,
                             fontSize: 17),
                       ),
-                      Text(
-                        '${widget.classData['grade']} (${widget.classData['percentage']}%)',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w600),
-                      )
+                      SizedBox()
                     ],
                   ),
                 ),
@@ -248,62 +193,6 @@ class _ClassesPopupState extends State<ClassesPopup> {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class PopupAssignmentsListView extends StatelessWidget {
-  const PopupAssignmentsListView({Key key, @required this.data});
-
-  final Map data;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemCount: data['assignments'].length,
-      itemBuilder: (context, index) {
-        return Card(
-          elevation: 3,
-          child: ListTile(
-            title: Text(data['assignments'][index]['name']),
-            subtitle: Text(data['assignments'][index]['grade'].toString()),
-          ),
-        );
-      },
-    );
-  }
-}
-
-class Assignment extends StatelessWidget {
-  Assignment(this.assignmentData, {this.colored = false});
-  Map assignmentData;
-  bool colored;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: assignmentHeight,
-      margin: EdgeInsets.only(bottom: 0),
-      decoration: BoxDecoration(
-        color: colored ? Colors.deepPurple[300] : null,
-        borderRadius: BorderRadius.all(
-          Radius.circular(5),
-        ),
-      ),
-      padding: EdgeInsets.symmetric(horizontal: 8),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            assignmentData['name'],
-            style: TextStyle(color: Colors.white),
-          ),
-          Text(
-            '${assignmentData['grade']}%',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-          )
-        ],
       ),
     );
   }
