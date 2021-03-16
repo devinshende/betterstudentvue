@@ -1,70 +1,132 @@
 {
-    "classes":[
-       {
-          "name":"AP chemistry",
-          "grade":"A+",
-          "assignments":[
-             {
-                "name":"Stoichiometry practice",
-                "grade":100
-             },
-             {
-                "name":"Molar mass conversions",
-                "grade":98
-             },
-             {
-                "name":"Quest 3",
-                "grade":98.7
-             },
-             {
-                "name":"Quest 2",
-                "grade":97.0
-             },
-             {
-                "name":"Quest 1",
-                "grade":96.7
-             }
-          ]
-       },
-       {
-          "name":"AP Physics",
-          "grade":"A-",
-          "assignments":[
-             {
-                "name":"Coulombs law practice",
-                "grade":40
-             }
-          ]
-       },
-       {
-          "name":"AP World",
-          "grade":"A",
-          "assignments":[
-             {
-                "name":"Stoich practice",
-                "grade":100
-             }
-          ]
-       },
-       {
-          "name":"AP Psychology",
-          "grade":"B",
-          "assignments":[
-             {
-                "name":"Stoich practice",
-                "grade":100
-             }
-          ]
-       },
-       {
-          "name":"AP Spanish",
-          "grade":"A",
-          "assignments":[
-             {
-                "name":"verbs practice",
-                "grade":100
-             }
-          ]
-       }
-    ]
- }
+   "classes": [
+      {
+         "name": "AP Chemistry",
+         "teacher": "Sarah Hocken",
+         "grade": "A+",
+         "percentage": 100,
+         "assignments": [
+            {
+               "name": "Stoichiometry practice",
+               "grade": 100
+            },
+            {
+               "name": "Molar mass conversions",
+               "grade": 98
+            },
+            {
+               "name": "Quest 3",
+               "grade": 98.7
+            },
+            {
+               "name": "Quest 2",
+               "grade": 97.0
+            },
+            {
+               "name": "Quest 1",
+               "grade": 96.7
+            },
+            {
+               "name": "Molar mass conversions",
+               "grade": 98
+            },
+            {
+               "name": "Molar mass conversions",
+               "grade": 98
+            },
+            {
+               "name": "Molar mass conversions",
+               "grade": 98
+            },
+         ]
+      },
+      {
+         "name": "Physics",
+         "teacher": "Asher Tubman",
+         "grade": "A-",
+         "percentage": 90,
+         "assignments": [
+            {
+               "name": "Coulombs law practice",
+               "grade": 40
+            },
+            {
+               "name": "Coulombs law practice",
+               "grade": 40
+            },
+            {
+               "name": "Coulombs law practice",
+               "grade": 40
+            },
+         ]
+      },
+      {
+         "name": "World",
+         "teacher": "Anna Grace",
+         "grade": "A",
+         "percentage": 95,
+         "assignments": [
+            {
+               "name": "Stoich practice",
+               "grade": 100
+            },
+            {
+               "name": "Quest 3",
+               "grade": 98.7
+            },
+            {
+               "name": "Quest 3",
+               "grade": 98.7
+            },
+         ]
+      },
+      {
+         "name": "Psychology",
+         "teacher": "Clark",
+         "grade": "B",
+         "percentage": 86,
+         "assignments": [
+            {
+               "name": "Vsauce quiz",
+               "grade": 100
+            },
+            {
+               "name": "Trolley problem reading",
+               "grade": 80
+            },
+            {
+               "name": "Conformity documentary",
+               "grade": 95
+            },
+            {
+               "name": "Conformity documentary",
+               "grade": 95
+            },
+         ]
+      },
+      {
+         "name": "Spanish",
+         "teacher": "Daniela Dey",
+         "grade": "A",
+         "percentage": 96,
+         "assignments": [
+            {
+               "name": "Stoich practice",
+               "grade": 100
+            },
+            {
+               "name": "Conformity documentary",
+               "grade": 95
+            },
+            {
+               "name": "Conformity documentary",
+               "grade": 95
+            },
+            {
+               "name": "Conformity documentary",
+               "grade": 95
+            },
+         ]
+      }
+   ]
+}

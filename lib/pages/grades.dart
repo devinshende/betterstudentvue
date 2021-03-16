@@ -16,6 +16,7 @@ const double assignmentHeight = 40;
 List classesList = [
   {
     'name': 'AP Chemistry',
+    'teacher': 'Sarah Hocken',
     'grade': 'A+',
     'percentage': 100,
     'assignments': [
@@ -31,6 +32,7 @@ List classesList = [
   },
   {
     'name': 'Physics',
+    'teacher': 'Asher Tubman',
     'grade': 'A-',
     'percentage': 90,
     'assignments': [
@@ -41,6 +43,7 @@ List classesList = [
   },
   {
     'name': 'World',
+    'teacher': 'Anna Grace',
     'grade': 'A',
     'percentage': 95,
     'assignments': [
@@ -51,6 +54,7 @@ List classesList = [
   },
   {
     'name': 'Psychology',
+    'teacher': 'Clark',
     'grade': 'B',
     'percentage': 86,
     'assignments': [
@@ -62,6 +66,7 @@ List classesList = [
   },
   {
     'name': 'Spanish',
+    'teacher': 'Daniela Dey',
     'grade': 'A',
     'percentage': 96,
     'assignments': [

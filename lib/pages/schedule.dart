@@ -15,21 +15,33 @@ const double assignmentHeight = 40;
 
 class NewGradesPage extends StatelessWidget {
   Widget buildClassWidget(BuildContext context, int index) {
-    if (index == 0) {
-      return SizedBox();
+    return Class(index, classesList[index]);
+  }
+
+  List<Widget> get_classes() {
+    List<Widget> classes = [];
+    for (var i = 0; i < classesList.length; i += 1) {
+      classes.add(Class(i, classesList[i]));
     }
-    return Class(index, classesList[index - 1]);
+    return classes;
   }
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemCount: classesList.length + 1,
-        itemBuilder: buildClassWidget,
+      child: SingleChildScrollView(
+        child: Column(
+          children: get_classes(),
+        ),
       ),
     );
+
+    //   child: ListView.builder(
+    //     shrinkWrap: true,
+    //     itemCount: classesList.length,
+    //     itemBuilder: buildClassWidget,
+    //   ),
+    // );
   }
 }
 
@@ -55,48 +67,67 @@ class _ClassState extends State<Class> {
       data: widget.classData,
       windowSize: size,
     );
-    return Center(
-      child: Stack(
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(15),
+      margin: EdgeInsets.only(left: 30, right: 30, bottom: 10),
+      decoration: BoxDecoration(
+        color: Colors.black12,
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          dropdownCover,
-          Column(
-            children: [
-              GestureDetector(
-                onDoubleTap: () {
-                  showDialog(
-                      context: context,
-                      builder: (BuildContext context) => errorDialog);
-                },
-                child: Container(
-                  width: size.width * 0.8,
-                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                  margin: EdgeInsets.only(top: 5),
-                  decoration: ShapeDecoration(
-                    color: Color(0xd0d0d0).withAlpha(255),
-                    shape: StadiumBorder(), // rounds the edges all the way
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(widget.number.toString()),
-                      Text(
-                        widget.classData['name'],
-                        style: TextStyle(
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w400,
-                            fontSize: 17),
-                      ),
-                      SizedBox()
-                    ],
-                  ),
-                ),
-              ),
-              dropdown,
-            ],
+          Text(
+            '${widget.number + 1}. ${widget.classData['name']}',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
           ),
+          SizedBox(height: 5),
+          Text(widget.classData['teacher'], style: TextStyle(fontSize: 16)),
+          SizedBox(height: 5),
         ],
+        // contentPadding: EdgeInsets.all(30),,
       ),
     );
+    // return Center(
+    //   child: Column(
+    //     children: [
+    //       GestureDetector(
+    //         onDoubleTap: () {
+    //           showDialog(
+    //               context: context,
+    //               builder: (BuildContext context) => errorDialog);
+    //         },
+    //         child: Container(
+    //           width: size.width * 0.8,
+    //           padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+    //           margin: EdgeInsets.only(top: 5),
+    //           decoration: ShapeDecoration(
+    //             color: Color(0xd0d0d0).withAlpha(255),
+    //             shape: StadiumBorder(), // rounds the edges all the way
+    //           ),
+    //           child: Row(
+    //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //             children: [
+    //               Text(widget.number.toString()),
+    //               Text(
+    //                 widget.classData['name'],
+    //                 style: TextStyle(
+    //                     fontFamily: 'Roboto',
+    //                     fontWeight: FontWeight.w400,
+    //                     fontSize: 17),
+    //               ),
+    //               SizedBox()
+    //             ],
+    //           ),
+    //         ),
+    //       ),
+    //     ],
+    //   ),
+    // );
   }
 }
 
