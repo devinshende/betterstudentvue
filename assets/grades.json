@@ -1,0 +1,70 @@
+{
+    "classes":[
+       {
+          "name":"AP chemistry",
+          "grade":"A+",
+          "assignments":[
+             {
+                "name":"Stoichiometry practice",
+                "grade":100
+             },
+             {
+                "name":"Molar mass conversions",
+                "grade":98
+             },
+             {
+                "name":"Quest 3",
+                "grade":98.7
+             },
+             {
+                "name":"Quest 2",
+                "grade":97.0
+             },
+             {
+                "name":"Quest 1",
+                "grade":96.7
+             }
+          ]
+       },
+       {
+          "name":"AP Physics",
+          "grade":"A-",
+          "assignments":[
+             {
+                "name":"Coulombs law practice",
+                "grade":40
+             }
+          ]
+       },
+       {
+          "name":"AP World",
+          "grade":"A",
+          "assignments":[
+             {
+                "name":"Stoich practice",
+                "grade":100
+             }
+          ]
+       },
+       {
+          "name":"AP Psychology",
+          "grade":"B",
+          "assignments":[
+             {
+                "name":"Stoich practice",
+                "grade":100
+             }
+          ]
+       },
+       {
+          "name":"AP Spanish",
+          "grade":"A",
+          "assignments":[
+             {
+                "name":"verbs practice",
+                "grade":100
+             }
+          ]
+       }
+    ]
+ }
